@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="http://fonts.cdnfonts.com/css/sweet-n-sticky" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <title>Dziękujemy za wiadomość</title>
+
+    <style>
+        *{
+            font-family: 'Manrope', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1,h2 {
+            text-align: center;
+        }
+
+        h1 {
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-weight: 500;
+        }
+
+        main {
+            border: 1px solid black;
+            border-radius: 40px;
+            padding: 25px;
+            margin: 25px;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .button {
+            display: flex;
+            margin: 10px;
+            text-decoration: none;
+            max-width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .button:hover {
+            cursor: pointer;
+        }
+
+        .button:hover > .b1 {
+            background-color: #F3B449;
+        }
+
+        .button:hover > .b2 {
+            background-color: black;
+        }
+
+        .b1 {
+            background-color: #f3b549cf;
+            padding: 10px;
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+            min-width: 175px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .b2 {
+            background-color:rgba(0, 0, 0, 0.745);
+            padding: 10px;
+            color: white;
+            font-size: 25px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer{
+            background-color: #F3B449;
+            margin-top: 30px;
+        }
+
+        footer > img {
+            width: 200px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://rob-bob.pl/" target="_blank"><img style="width: 120px; margin: 30px" src="https://i.imgur.com/yX9LJsd.png"></a>
+    <img style="width: 80px; margin-left: auto; margin-right: auto; display: block;" src="https://i.imgur.com/cCV17oO.png">
+    <h1>{{data.name}}. TWOJA WIADOMOŚĆ ZOSTAŁA DOSTARCZONA</h1>
+    <h2>TREŚĆ WIADOMOŚCI:</h2>
+    <main>
+        <div>
+            <h3>{{data.message}}</h3>
+        </div>
+        <div>
+            <h3>Imię: {{data.name}}</h3>
+            <h3>Nr telefonu: {{data.phone}}</h3>
+            <h3>E-mail: {{data.email}}</h3>
+            <h3>Adres: {{data.address}}</h3>
+        </div>
+    </main>
+    <a href="https://rob-bob.pl/" target="_blank" class="button">
+        <div class="b1">POWRÓT NA STRONĘ</div>
+        <div class="b2">&#8250;</div>
+    </a>
+    <footer>
+        <img src="https://i.imgur.com/0Sx7QR7.png">
+    </footer>
+</body>
+</html>

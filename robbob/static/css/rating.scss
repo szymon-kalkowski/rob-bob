@@ -1,0 +1,64 @@
+$stars: 5;
+$star-spacing: 2px;
+$star-on-color: rgb(243, 180, 73);
+$star-off-color: lightgray;
+
+@media (max-width: 991px) {
+    .rating {
+        label {
+            width: 55px;
+            height: 55px;
+
+            &:before {
+                font-size: 57px;
+            }
+        }
+    }
+}
+@media (min-width: 992px) {
+    .rating {
+        label {
+            width: 80px;
+            height: 80px;
+
+            &:before {
+                font-size: 82px;
+            }
+        }
+    }
+}
+
+.rating {
+	width: fit-content;
+	height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+	margin: 0 auto;
+	background: white;
+
+	label {
+		float: right;
+		position: relative;
+		cursor: pointer;
+		
+		&:not(:first-of-type) {
+			padding-right: $star-spacing;
+		}
+		
+		&:before {
+			content: "\2605";
+			color: $star-off-color;
+			line-height: 1;
+		}
+	}
+	
+	input {
+		display: none;
+	}
+	
+	input:checked ~ label:before,
+	&:not(:checked) > label:hover:before,
+	&:not(:checked) > label:hover ~ label:before {
+		color: $star-on-color;
+	}
+}

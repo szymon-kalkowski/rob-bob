@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pl" prefix="og: https://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rob-Bob</title>
+
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta property="og:image" content="">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}">
+    <link rel="mask-icon" href="{% static 'favicon/safari-pinned-tab.svg'%}" color="#f3b449">
+    <meta name="msapplication-TileColor" content="#f3b449">
+    <meta name="theme-color" content="#ffffff">
+
+    <link href="{% static 'css/lightbox.min.css' %}" rel="stylesheet" />
+
+    <!-- Link Swiper's CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/rating.css' %}">
+
+    <link href="http://fonts.cdnfonts.com/css/sweet-n-sticky" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+
+                        break;
+                    }
+                }
+            }
+
+            return cookieValue;
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer>
+    </script>
+    <script type="text/javascript">
+        var recaptcha1 = "";
+        var recaptcha2 = "";
+        var onloadCallback = function() {
+            recaptcha1 = grecaptcha.render('recaptcha1', {
+                'sitekey' : '6LcvoH4hAAAAAEK8H5cFhi-MxZEfwjjfPjUJuU14',
+            });
+            recaptcha2 = grecaptcha.render('recaptcha2', {
+                'sitekey' : '6LcvoH4hAAAAAEK8H5cFhi-MxZEfwjjfPjUJuU14',
+            });
+        };
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav"><!--fixed-top-->
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex justify-content-center my-3"><img src="{% static 'img/logo1.svg' %}" class="w-50"></a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarsExample04">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#onas">O NAS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#galeria">GALERIA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kontakt">KONTAKT</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#opinie">OPINIE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <img src="{% static 'img/czapa.svg' %}" class="d-block mx-auto helmet mt-3">
+                <h1 class="text-center sweetfont head">FIRMA REMONTOWO-BUDOWLANA</h1>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-12 p-0">
+                <!-- Swiper -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="{{edit.slide_1.url}}" class="position-relative">
+                        <div class="position-absolute abs">
+                            <div class="box">Od A do Z, szybka realizacja zleceń.</div>
+                            <a href="#kontakt" class="button">
+                            <div class="b1 text-center">KONTAKT</div>
+                            <div class="b2">&#8250;</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{edit.slide_2.url}}" class="position-relative">
+                        <div class="position-absolute abs">
+                            <div class="box">Działamy w całym Trójmieście.</div>
+                            <a href="#onas" class="button">
+                            <div class="b1 text-center">O NAS</div>
+                            <div class="b2">&#8250;</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="{{edit.slide_3.url}}" class="position-relative">
+                        <div class="position-absolute abs">
+                            <div class="box">Sprawdź nasze realizacje.</div>
+                            <a href="#galeria" class="button">
+                            <div class="b1 text-center">GALERIA</div>
+                            <div class="b2">&#8250;</div>
+                            </a>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid main">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="headline" id="onas">{{edit.o_nas_tytul}}</h1>
+                <div style="padding-left: 25px">
+                    <h3>{{edit.o_nas_opis|linebreaks}}</h3>
+                    <a href="https://www.owg.pl/ceidg/rob_bob_dariusz_piwowarski_9,74,583145,5831450085" target="_blank" class="button my-3" style="margin-left: 0;">
+                        <div class="b1 text-center px-3">INFORMACJE O FIRMIE</div>
+                        <div class="b2">&#8250;</div>
+                    </a>
+                    <h2 class="sheadline">Dlaczego powinieneś nam zaufać?</h2>
+                    <div class="row">
+                        <div class="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-3">
+                            <div class="card">
+                                <img src="{% static 'img/ikona1.svg' %}" class="mx-auto mb-3">
+                                <h3>Wielu zadowolonych klientów.</h3>
+                                <h5>Firma tworzyła dla dziesiątek kliontów, którzy byli w pełni zadowoleni z wykonanej pracy.</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-3">
+                            <div class="card">
+                                <img src="{% static 'img/ikona2.svg' %}" class="mx-auto mb-3">
+                                <h3>Lata doświadczenia w branży.</h3>
+                                <h5>Posiadamy ponad 10 letnie doświadczenie w branży remontowo-budowlanej. Nasze realizacje można znaleźć w galerii na stronie.</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-3">
+                            <div class="card">
+                                <img src="{% static 'img/ikona3.svg' %}" class="mx-auto mb-3">
+                                <h3>Gwarancja jakości i terminu.</h3>
+                                <h5>Gwarantujemy utrzymanie najwyższej możliwej jakości zawsze w wyznaczonym terminie.</h5>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6 col-xl-3 d-flex justify-content-center my-3">
+                            <div class="card">
+                                <img src="{% static 'img/ikona3.svg' %}" class="mx-auto mb-3">
+                                <h3>Wielu zadowolonych klientów.</h3>
+                                <h5>Firma tworzyła dla dziesiątek kliontów, którzy byli w pełni zadowoleni z wykonanej pracy.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="sheadline">Co oferujemy?</h2>
+                    <div class="d-flex offer">
+                        {% for service in services %}
+                        <div class="d-flex"><div style="color: #F3B449; font-weight: 800">> </div>{{service.nazwa}}</div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <h1 class="headline" id="galeria">Przykładowe realizacje</h1>
+                <div style="padding-left: 25px">
+                    <h3 class="my-4">Galeria przedstawiająca wykonane dotychczas remonty dla naszych klientów.</h3>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper2">
+                        <div class="swiper-wrapper">
+                        {% for photo in photos %}
+                        <div class="swiper-slide"><a class="lightboxA" href="{{photo.zdjecie.url}}" data-lightbox="gallery"></a><img src="{{photo.zdjecie.url}}"></div>
+                        {% endfor %}
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                </div>
+                <h1 class="headline" id="kontakt">Skontaktuj się z nami</h1>
+                <div style="padding-left: 25px">
+                    <h3 class="my-4">Napisz do nas lub zadzwoń na jeden z numerów telefonu!</h3>
+                    <h2 class="text-center" style="color: #F3B449" id="sent"></h2>
+                    <form  action="" method="post" id="contactForm">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="row">
+                                    <div class="col-12 col-lg-6">
+                                        <label class="label">Imię*</label>
+                                        <input name="nameC" id="nameC" type="text" required class="w-100">
+                                    </div>
+                                    <div class="col-12 col-lg-6">
+                                        <label class="label">Numer telefonu*</label>
+                                        <input name="phoneC" id="phoneC" type="text" required class="w-100">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <label class="label">Email*</label>
+                                        <input name="emailC" id="emailC" type="email" required class="w-100">
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="label">Adres*</label>
+                                        <input name="addressC" id="addressC" type="text" required class="w-100">
+                                    </div>
+                                    <div class="col-12">
+                                        <!-- <div class="g-recaptcha" data-sitekey="6LcvoH4hAAAAAEK8H5cFhi-MxZEfwjjfPjUJuU14"></div> -->
+                                        <div id="recaptcha1" class="g-recaptcha mt-3"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6 d-flex flex-column">
+                                <label class="label">Wiadomość*</label>
+                                <textarea name="messageC" id="messageC" required class="w-100 h-auto"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button id="btn1" class="button my-3 w-100" style="margin-left: 0; max-width: none; border: none;">
+                                    <div class="b1 text-center px-3" style="flex: auto 1" id="wyslij">WYŚLIJ ZGŁOSZENIE</div>
+                                    <div class="b2 text-center" style="width: 60px">&#8250;</div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <a href="tel:{{edit.tel_1}}" class="button my-3 w-100" style="margin-left: 0; max-width: none;">
+                                <div class="b1 text-center px-3" style="flex: auto 1">{{edit.tel_1}}</div>
+                                <div class="b2 text-center" style="width: 60px">&#8250;</div>
+                            </a>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <a href="tel:{{edit.tel_2}}" class="button my-3 w-100" style="margin-left: 0; max-width: none;">
+                                <div class="b1 text-center px-3" style="flex: auto 1">{{edit.tel_2}}</div>
+                                <div class="b2 text-center" style="width: 60px">&#8250;</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="headline" id="opinie">Opinie klientów</h1>
+                <div style="padding-left: 25px">
+                    <h3>Przeczytaj opinie naszych klientów lub dodaj własną.</h3>
+                    <!-- Swiper -->
+                    <div class="swiper mySwiper3">
+                        <div class="swiper-wrapper">
+                            {% for opinion in opinions %}
+                            <div class="swiper-slide">
+                                <div class="opinion">
+                                    <div>
+                                        <img src="{% static 'img/ikona1.svg' %}">
+                                        <h2>{{opinion.imie}}</h2>
+                                        <h6>{{opinion.email}}</h6>
+                                        <div class="h3" style="color: #F3B449;">{% for i in range %}{% if i > opinion.ocena%}☆{% else %}★{% endif %}{% endfor %}</div>
+                                        <h1 class="text-center text-uppercase justify-content-center sweetfont px-3 d-flex align-items-center" style="color: #F3B449; overflow: scroll; height: 55%; background-color: transparent;">{{opinion.opinia}}</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <h2 class="sheadline">Korzystałeś z naszych usług? Wystaw opinię!</h2>
+                    <h2 class="text-center" style="color: #F3B449" id="reviewed"></h2>
+                    <form action="" method="POST" id="opinionForm">
+                        {% csrf_token %}
+                        
+                        <div class="rating">
+                            <input type="radio" id="star5" name="rating" value="5" required/><label for="star5"></label>
+                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
+                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
+                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
+                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-12 col-lg-6 d-flex flex-column">
+                                <label class="label">Opinia*</label>
+                                <textarea name="opinionO" id="opinionO" required class="w-100 h-auto"></textarea>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <label class="label">Imię*</label>
+                                <input name="nameO" id="nameO" type="text" required class="w-100">
+                                <label class="label">Email*</label>
+                                <input name="emailO" id="emailO" type="email" required class="w-100">
+                                <div id="recaptcha2" class="g-recaptcha mt-3"></div>
+                                <button id="btn2" class="button w-100" style="margin-left: 0; max-width: none; border: none; margin-top: 15px; margin-bottom: 0;">
+                                    <div class="b1 text-center px-3" style="flex: auto 1">WYSTAW OPINIĘ</div>
+                                    <div class="b2" style="width: 60px">&#8250;</div>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="up" class="none">&#94;</div>
+    <footer class="container-fluid d-flex justify-content-center align-items-center p-5">
+        <img src="{% static 'img/logo2.svg' %}">
+        <p>All rights reserved</p>
+        <a href="{{edit.regulamin.url}}" target="_blank">regulamin</a>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+            
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        loop: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        });
+
+        var swiper = new Swiper(".mySwiper2", {
+            slidesPerView: window.innerWidth < 991 ? 1 : 3,
+            spaceBetween: 30,
+            slidesPerGroup: window.innerWidth < 991 ? 1 : 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+            },
+            navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+
+        var swiper = new Swiper(".mySwiper3", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: window.innerWidth < 991 ? 1 : 3,
+            loop: true,
+            coverflowEffect: {
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false,
+            },
+            pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+            dynamicBullets: true,
+            },
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+        });
+    </script>
+    <script>
+        const up = document.getElementById("up");
+        // const nav = document.getElementById("nav");
+        up.addEventListener("click", scrollToTop);
+        //handling scroll event
+        window.addEventListener("scroll", () => {
+            const {
+                scrollTop,
+                scrollHeight,
+                clientHeight
+            } = document.documentElement;
+
+            //showing and hiding scroll to top arrow
+            if (scrollTop === 0){
+                up.classList.add("none");
+                // nav.classList.remove("line");
+            } else {
+                up.classList.remove("none");
+                // nav.classList.add("line");
+            }
+        }, {
+            passive: true
+        });
+
+        //scrolling to the top of the window
+        function scrollToTop(){
+            window.scroll({top: 0, behavior: "smooth"});
+        }
+    </script>
+    <script>
+        const contactForm = document.getElementById("contactForm");
+        const opinionForm = document.getElementById("opinionForm");
+        const sent = document.getElementById("sent");
+        const reviewed = document.getElementById("reviewed");
+        const wyslij = document.getElementById("wyslij");
+
+        wyslij.innerHTML = window.innerWidth < 991 ? "WYŚLIJ" : "WYŚLIJ ZGŁOSZENIE";
+
+        contactForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            submitContact();
+        });
+
+        opinionForm.addEventListener('submit', function(e){
+            e.preventDefault();
+            submitOpinion();
+        })
+
+        function submitContact() {
+            
+            const token = grecaptcha.getResponse(recaptcha1);
+
+            const contactFormData = {
+                'name': contactForm.nameC.value,
+                'phone': contactForm.phoneC.value,
+                'email': contactForm.emailC.value,
+                'address': contactForm.addressC.value,
+                'message': contactForm.messageC.value,
+                'token': token
+            }
+            
+            const csrftoken = getCookie('csrftoken');
+            fetch("contact/", {
+                    credentials: 'include',
+                    method: 'POST',
+                    mode: 'same-origin',
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type':'application/json',
+                        'X-CSRFToken':csrftoken,
+                    },
+                    body:JSON.stringify({'form': contactFormData})
+                })
+                .then((res) => res.json())
+                .then((data) => {
+                    if(data === 'success'){
+                        contactForm.reset();
+                        grecaptcha.reset(recaptcha1);
+                        sent.classList.remove("red");
+                        sent.innerHTML = "Wiadomość wysłana pomyślnie!";
+                    }else{
+                        sent.classList.add("red");
+                        sent.innerHTML = "Zaznacz pole 'Nie jestem robotem'";
+                    } 
+                })
+        }
+
+        function submitOpinion() {
+
+            const token2 = grecaptcha.getResponse(recaptcha2);
+
+            const opinionFormData = {
+                'name': opinionForm.nameO.value,
+                'email': opinionForm.emailO.value,
+                'opinion': opinionForm.opinionO.value,
+                'rating': opinionForm.rating.value,
+                'token': token2
+            }
+            
+            const csrftoken = getCookie('csrftoken');
+            fetch("opinion/", {
+                    credentials: 'include',
+                    method: 'POST',
+                    mode: 'same-origin',
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type':'application/json',
+                        'X-CSRFToken':csrftoken,
+                    },
+                    body:JSON.stringify({'form': opinionFormData})
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    if(data === 'success'){
+                        opinionForm.reset();
+                        reviewed.classList.remove("red");
+                        reviewed.innerHTML = "Dziękujemy za opinię!";
+                        setTimeout(() => location.reload(), 2000);
+                    }else{
+                        reviewed.classList.add("red");
+                        reviewed.innerHTML = "Zaznacz pole 'Nie jestem robotem'";
+                    }
+                    
+                })
+        }
+    </script>
+    <script src="{% static 'js/lightbox-plus-jquery.min.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+@charset "UTF-8";
+@media (max-width: 991px) {
+  .rating label {
+    width: 55px;
+    height: 55px;
+  }
+  .rating label:before {
+    font-size: 57px;
+  }
+}
+@media (min-width: 992px) {
+  .rating label {
+    width: 80px;
+    height: 80px;
+  }
+  .rating label:before {
+    font-size: 82px;
+  }
+}
+.rating {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+  background: white;
+}
+.rating label {
+  float: right;
+  position: relative;
+  cursor: pointer;
+}
+.rating label:not(:first-of-type) {
+  padding-right: 2px;
+}
+.rating label:before {
+  content: "★";
+  color: lightgray;
+  line-height: 1;
+}
+.rating input {
+  display: none;
+}
+.rating input:checked ~ label:before, .rating:not(:checked) > label:hover:before, .rating:not(:checked) > label:hover ~ label:before {
+  color: rgb(243, 180, 73);
+}/*# sourceMappingURL=rating.css.map */
